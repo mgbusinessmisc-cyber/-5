@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" style="scroll-behavior:smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حضارة مصر القديمة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-padding-top: 72px; scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark: #8B6914;
+      --sand: #F5ECD7;
+      --sand-dark: #E8D5A8;
+      --dark: #1A1208;
+      --dark2: #2D1F0A;
+      --stone: #7A6645;
+      --rust: #8B3A1A;
+      --teal: #1A5F5A;
+      --teal-light: #2E8B84;
+    }
+
+    body {
+      font-family: 'Noto Naskh Arabic', serif;
+      background: var(--dark);
+      color: var(--sand);
+      direction: rtl;
+      overflow-x: hidden;
+    }
+
+    .hero, .section-wrap, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0 36px;
+      height: 64px;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: none;
+      box-shadow: none;
+      pointer-events: none;
+    }
+
+    .nav-logo {
+      font-family: 'Amiri', serif;
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 5px 0;
+      pointer-events: all;
+    }
+
+    .nav-links a {
+      font-family: 'Noto Naskh Arabic', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(232,213,168,0.72);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      padding: 6px 18px;
+      border-radius: 100px;
+      border: none;
+      background: transparent;
+      transition: background 0.22s, color 0.22s;
+      white-space: nowrap;
+      display: block;
+    }
+
+    .nav-links a:hover {
+      background: rgba(201,168,76,0.16);
+      border-color: rgba(201,168,76,0.45);
+      color: var(--gold);
+    }
+
+    .nav-links a.nav-active {
+      background: rgba(201,168,76,0.22);
+      border-color: rgba(201,168,76,0.6);
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 100px 40px 80px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 80%, #3D2A06 0%, #1A1208 60%);
+    }
+
+    .hero > *:not(img) { position: relative; z-index: 1; }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(201,168,76,0.03) 0px, transparent 1px, transparent 80px, rgba(201,168,76,0.03) 80px),
+        repeating-linear-gradient(0deg, rgba(201,168,76,0.03) 0px, transparent 1px, transparent 80px, rgba(201,168,76,0.03) 80px);
+      pointer-events: none;
+    }
+
+    .hero-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.1;
+      text-shadow: 0 0 40px rgba(201,168,76,0.4);
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Noto Naskh Arabic', serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--sand-dark);
+      letter-spacing: 0.15em;
+      margin-bottom: 48px;
+      opacity: 0.8;
+    }
+
+    .hero-divider {
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 48px;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--stone);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+
+
+    /* SECTION BASE */
+    section {
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-number {
+      font-family: 'Amiri', serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: rgba(201,168,76,0.1);
+      line-height: 1;
+      position: absolute;
+      top: -20px;
+      right: 0;
+      user-select: none;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      color: var(--sand);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .section-lead {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--stone);
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    .section-wrap { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.1); }
+    .section-wrap > section { position: relative; z-index: 1; }
+    .section-wrap.alt { background: #0F0B05; }
+
+    /* SECTION 1: معلومات عامة */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .info-card {
+      background: #2E1C06;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-top: 3px solid rgba(201,168,76,0.65);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.4);
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .info-card:hover {
+      background: #3D2A0C;
+      border-color: rgba(201,168,76,0.7);
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.3), 0 6px 32px rgba(201,168,76,0.12);
+    }
+
+    .info-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .info-card:hover::after { transform: scaleX(1); }
+
+    .info-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+
+    .info-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      color: #F5ECD7;
+      font-weight: 700;
+      margin-bottom: 8px;
+      
+    }
+
+    .info-desc { font-size: 13px; color: #A8895A; line-height: 1.8; font-weight: 400; }
+
+    /* SECTION 2: الحروف */
+    .letters-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+      margin-bottom: 48px;
+    }
+
+    .letter-tile {
+      aspect-ratio: 1;
+      background: #28180A;
+      border: 1.5px solid rgba(201,168,76,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+      box-shadow: inset 0 0 16px rgba(0,0,0,0.4);
+    }
+
+    .letter-tile:hover, .letter-tile.active {
+      background: rgba(201,168,76,0.18);
+      border-color: var(--gold);
+      border-width: 2px;
+      transform: scale(1.08);
+      z-index: 2;
+      box-shadow: 0 0 16px rgba(201,168,76,0.2), inset 0 0 16px rgba(201,168,76,0.06);
+    }
+
+    .letter-hiero { font-size: 22px; line-height: 1; filter: sepia(0.5) saturate(2) brightness(1.2); }
+    .letter-arabic { font-family: 'Amiri', serif; font-size: 14px; color: var(--gold); font-weight: 700; }
+    .letter-latin { font-size: 9px; color: var(--stone); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .hieroglyph-legend {
+      background: #201408;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-top: 3px solid rgba(201,168,76,0.65);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.4);
+    }
+
+    .legend-item { display: flex; align-items: flex-start; gap: 16px; }
+    .legend-symbol { font-size: 36px; line-height: 1; flex-shrink: 0; }
+    .legend-text strong { display: block; font-family: 'Amiri', serif; font-size: 16px; color: var(--gold); margin-bottom: 4px; }
+    .legend-text span { font-size: 12px; color: var(--stone); line-height: 1.7; }
+
+    #letter-detail {
+      background: #0F0B05;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 24px;
+      display: none;
+      margin-top: 16px;
+    }
+
+    #letter-detail.visible { display: block; }
+    .detail-inner { display: flex; align-items: center; gap: 24px; }
+    .detail-glyph { font-size: 64px; line-height: 1; filter: sepia(0.5) saturate(2) brightness(1.3); flex-shrink: 0; }
+    .detail-info strong { font-family: 'Amiri', serif; font-size: 22px; color: var(--gold); display: block; margin-bottom: 6px; }
+    .detail-info p { font-size: 13px; color: var(--stone); line-height: 1.8; }
+
+    /* SECTION 3: اللغة والخريطة */
+    .lang-map-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+
+    .lang-panel {
+      background: #201408;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-top: 3px solid rgba(201,168,76,0.65);
+      padding: 36px;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.4);
+    }
+
+    .lang-panel h3 {
+      font-family: 'Amiri', serif;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .timeline { position: relative; padding-right: 20px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .timeline-item { position: relative; margin-bottom: 24px; padding-right: 24px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      right: -7px; top: 6px;
+      width: 12px; height: 12px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--dark);
+    }
+
+    .timeline-era { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 3px; }
+    .timeline-title { font-family: 'Amiri', serif; font-size: 16px; color: var(--sand); margin-bottom: 3px; }
+    .timeline-desc { font-size: 12px; color: var(--stone); line-height: 1.6; }
+
+    .map-container {
+      background: #201408;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-top: 3px solid rgba(201,168,76,0.65);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.4);
+    }
+
+    .map-container h3 { font-family: 'Amiri', serif; font-size: 18px; color: var(--gold); text-align: center; }
+
+    .map-legend-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--stone);
+    }
+
+    .map-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-left: 4px; vertical-align: middle; }
+
+    /* SECTION 4: أدوات الكتابة */
+    .tools-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .tool-card {
+      display: flex;
+      gap: 20px;
+      background: #28180A;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-right: 3px solid rgba(201,168,76,0.65);
+      padding: 28px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.35);
+      transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    .tool-card:hover {
+      border-color: rgba(201,168,76,0.7);
+      transform: translateY(-3px);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.2), 0 8px 32px rgba(201,168,76,0.1);
+    }
+
+    .tool-icon-box {
+      width: 56px;
+      height: 56px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      border-radius: 2px;
+    }
+
+    .tool-name { font-family: 'Amiri', serif; font-size: 20px; color: var(--gold); margin-bottom: 6px; }
+    .tool-desc { font-size: 13px; color: #A8895A; line-height: 1.8; font-weight: 400; }
+
+    .tool-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--teal-light);
+      border: 1px solid var(--teal);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* SECTION 5: النيل */
+    .nile-hero {
+      position: relative;
+      background: linear-gradient(135deg, #0A2A28 0%, #0F0B05 100%);
+      border: 1px solid rgba(46,139,132,0.3);
+      padding: 48px;
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .nile-hero::before {
+      content: '𓇗𓇗𓇗';
+      position: absolute;
+      font-size: 120px;
+      right: -20px;
+      bottom: -20px;
+      opacity: 0.05;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .nile-quote {
+      font-family: 'Amiri', serif;
+      font-size: clamp(20px, 3vw, 30px);
+      color: var(--teal-light);
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .nile-source { font-size: 12px; color: var(--stone); letter-spacing: 0.1em; }
+
+    .nile-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(46,139,132,0.15);
+      border: 1px solid rgba(46,139,132,0.2);
+      margin-bottom: 32px;
+    }
+
+    .nile-stat {
+      background: #1E1508;
+      padding: 32px 20px;
+      text-align: center;
+      border-top: 3px solid rgba(46,139,132,0.6);
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.35);
+      transition: background 0.3s;
+    }
+    .nile-stat:hover { background: #0F1F1E; }
+    .nile-stat-num { font-family: 'Amiri', serif; font-size: 36px; color: var(--teal-light); font-weight: 700; display: block; margin-bottom: 4px; }
+    .nile-stat-label { font-size: 12px; color: var(--stone); letter-spacing: 0.1em; }
+
+    .nile-aspects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .nile-aspect {
+      background: #091F1D;
+      border: 1.5px solid rgba(46,139,132,0.4);
+      border-top: 3px solid rgba(46,139,132,0.7);
+      padding: 28px;
+      box-shadow: inset 0 0 24px rgba(0,0,0,0.35), 0 4px 14px rgba(0,0,0,0.35);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .nile-aspect:hover {
+      border-color: rgba(46,139,132,0.65);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.3), 0 6px 28px rgba(46,139,132,0.1);
+    }
+
+    .nile-aspect-title { font-family: 'Amiri', serif; font-size: 18px; color: var(--teal-light); margin-bottom: 10px; }
+    .nile-aspect-text { font-size: 13px; color: #7ABFBA; line-height: 1.8; font-weight: 400; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 48px 40px;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      background: #0A0705;
+    }
+
+    .footer-text { font-family: 'Amiri', serif; font-size: 18px; color: var(--gold); margin-bottom: 8px; }
+    .footer-sub { font-size: 12px; color: var(--stone); letter-spacing: 0.1em; }
+
+    .section-header { position: relative; margin-bottom: 40px; }
+    .ornament { text-align: center; font-size: 20px; color: rgba(201,168,76,0.4); letter-spacing: 12px; margin: 16px 0 40px; }
+
+    /* Sit above dust canvas */
+    .info-card, .tool-card, .nile-aspect, .lang-panel, .map-container,
+    .hieroglyph-legend, .letter-tile, #letter-detail, .nile-stat,
+    .nile-hero, .nile-stats, .timeline-item, .legend-item,
+    footer, .section-header, .section-title, .section-lead,
+    .section-number, .ornament, .hero-title, .hero-subtitle,
+    .hero-divider, .hero-scroll, #chapterBox, #chapterTabs, .ch-tab {
+      position: relative;
+      z-index: 3;
+    }
+    footer {
+      position: relative;
+      z-index: 3;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Intro Splash -->
+<div id="intro" style="position:fixed;inset:0;background:#000;z-index:99999;overflow:hidden;">
+
+  <!-- VIDEO LAYER -->
+  <video id="intro-video"
+    autoplay muted playsinline
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 2s ease;z-index:1;">
+    <source src="assets/The_itro_vid.mp4" type="video/mp4">
+  </video>
+
+
+  <!-- INTRO AUDIO -->
+  <audio id="intro-audio" preload="auto" style="display:none;">
+    <source src="assets/The_intro_sound.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- EYE LAYER — hidden until video dissolves -->
+  <div id="eye-layer" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;opacity:0;transition:opacity 2s ease;z-index:2;">
+    <div id="eye-wrap" style="position:relative;display:flex;align-items:center;justify-content:center;">
+      <div id="eye-glyph" style="font-size:120px;line-height:1;color:#C9A84C;position:relative;z-index:2;opacity:0;">𓂀</div>
+      <div class="ring" id="r1"></div>
+      <div class="ring" id="r2"></div>
+      <div class="ring" id="r3"></div>
+      <div class="spark" style="top:-60px;left:50%;"></div>
+      <div class="spark" style="top:50%;left:-60px;"></div>
+      <div class="spark" style="top:50%;right:-60px;"></div>
+      <div class="spark" style="bottom:-60px;left:50%;"></div>
+      <div class="spark" style="top:-42px;left:-42px;"></div>
+      <div class="spark" style="top:-42px;right:-42px;"></div>
+      <div class="spark" style="bottom:-42px;left:-42px;"></div>
+      <div class="spark" style="bottom:-42px;right:-42px;"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Nav eye (persistent slow sparkle) -->
+<div id="nav-eye-wrap" style="position:relative;display:inline-flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.8s;">
+  <span id="nav-eye-glyph" style="font-size:22px;color:#C9A84C;position:relative;z-index:2;text-shadow:0 0 10px rgba(201,168,76,0.8),0 0 20px rgba(201,168,76,0.4);">𓂀</span>
+  <div class="nav-ring" id="nr1"></div>
+  <div class="nav-ring" id="nr2"></div>
+  <div class="nav-spark" style="top:-14px;left:50%;"></div>
+  <div class="nav-spark" style="top:50%;left:-14px;"></div>
+  <div class="nav-spark" style="top:50%;right:-14px;"></div>
+  <div class="nav-spark" style="bottom:-14px;left:50%;"></div>
+  <div class="nav-spark" style="top:-10px;left:-10px;"></div>
+  <div class="nav-spark" style="top:-10px;right:-10px;"></div>
+  <div class="nav-spark" style="bottom:-10px;left:-10px;"></div>
+  <div class="nav-spark" style="bottom:-10px;right:-10px;"></div>
+</div>
+
+<style>
+  #intro { transition: opacity 1.6s ease; }
+  #eye-glyph {
+    transition: opacity 0.8s, font-size 1.4s cubic-bezier(0.4,0,0.2,1), transform 1.4s cubic-bezier(0.4,0,0.2,1);
+    text-shadow: 0 0 20px rgba(201,168,76,0.9), 0 0 40px rgba(201,168,76,0.6), 0 0 80px rgba(201,168,76,0.3);
+  }
+  .ring {
+    position:absolute; border-radius:50%;
+    border:1px solid rgba(201,168,76,0.5);
+    transform:scale(0); opacity:0;
+  }
+  #r1 { width:160px; height:160px; }
+  #r2 { width:240px; height:240px; }
+  #r3 { width:330px; height:330px; }
+  .spark {
+    position:absolute; width:6px; height:6px;
+    background:#C9A84C; border-radius:50%; opacity:0;
+    transform:translate(-50%,-50%) scale(0);
+    box-shadow:0 0 8px 2px rgba(201,168,76,0.8);
+  }
+  .nav-ring {
+    position:absolute; border-radius:50%;
+    border:1px solid rgba(201,168,76,0.6);
+    transform:scale(0); opacity:0;
+    pointer-events:none;
+  }
+  #nr1 { width:36px; height:36px; }
+  #nr2 { width:54px; height:54px; }
+  .nav-spark {
+    position:absolute; width:3px; height:3px;
+    background:#C9A84C; border-radius:50%; opacity:0;
+    transform:translate(-50%,-50%) scale(0);
+    box-shadow:0 0 5px 1px rgba(201,168,76,0.8);
+    pointer-events:none;
+  }
+  @keyframes ringPulse {
+    0%   { transform:scale(0); opacity:0.8; }
+    100% { transform:scale(1); opacity:0; }
+  }
+  @keyframes sparkle {
+    0%   { opacity:0; transform:translate(-50%,-50%) scale(0); }
+    30%  { opacity:1; transform:translate(-50%,-50%) scale(1.4); }
+    60%  { opacity:0.6; transform:translate(-50%,-50%) scale(1); }
+    100% { opacity:0; transform:translate(-50%,-50%) scale(0); }
+  }
+  @keyframes navRingPulse {
+    0%   { transform:scale(0); opacity:0.7; }
+    100% { transform:scale(1); opacity:0; }
+  }
+  @keyframes hintPulse {
+    0%,100% { opacity:0.5; }
+    50%      { opacity:1; }
+  }
+  @keyframes navSparkle {
+    0%   { opacity:0; transform:translate(-50%,-50%) scale(0); }
+    40%  { opacity:0.9; transform:translate(-50%,-50%) scale(1.2); }
+    100% { opacity:0; transform:translate(-50%,-50%) scale(0); }
+  }
+</style>
+
+<script>
+(function(){
+  var intro     = document.getElementById('intro');
+  var video     = document.getElementById('intro-video');
+  var eyeLayer  = document.getElementById('eye-layer');
+  var glyph     = document.getElementById('eye-glyph');
+  var rings     = [document.getElementById('r1'), document.getElementById('r2'), document.getElementById('r3')];
+  var sparks    = document.querySelectorAll('#intro .spark');
+  var navWrap   = document.getElementById('nav-eye-wrap');
+  var navRings  = [document.getElementById('nr1'), document.getElementById('nr2')];
+  var navSparks = document.querySelectorAll('.nav-spark');
+
+  // Total timeline:
+  // 0s      → video plays
+  // video end (or max 6s) → cross-dissolve to eye (2s)
+  // eye visible → sparkle for 6.5s
+  // → shrink to nav
+
+  function startEyePhase(){
+    // Cross-dissolve: fade video out, eye layer in simultaneously
+    video.style.opacity = '0';
+    eyeLayer.style.opacity = '1';
+
+    // Fade in glyph after dissolve settles (2s)
+    setTimeout(function(){ glyph.style.opacity = '1'; }, 2000);
+
+    // Sparkle pulses across 6.5s (starting after dissolve)
+    function pulseRings(){
+      rings.forEach(function(r, i){
+        r.style.animation = 'none'; r.offsetHeight;
+        r.style.animation = 'ringPulse ' + (0.9 + i*0.2) + 's ease-out ' + (i*0.15) + 's forwards';
+      });
+    }
+    function sparkleDots(){
+      sparks.forEach(function(s, i){
+        s.style.animation = 'none'; s.offsetHeight;
+        s.style.animation = 'sparkle 0.8s ease-out ' + (i*0.08) + 's forwards';
+      });
+    }
+
+    [2200, 3100, 3900, 4700, 5500, 6200, 7000].forEach(function(t){
+      setTimeout(pulseRings, t);
+      setTimeout(sparkleDots, t);
+    });
+
+    // Shrink eye to nav at dissolve + 8.5s
+    setTimeout(function(){
+      var navLogo   = document.querySelector('.nav-logo');
+      var navRect   = navLogo ? navLogo.getBoundingClientRect() : {left:40, top:20, width:120, height:40};
+      var glyphRect = glyph.getBoundingClientRect();
+      var tx    = (navRect.left + 16) - (glyphRect.left + glyphRect.width/2);
+      var ty    = (navRect.top + navRect.height/2) - (glyphRect.top + glyphRect.height/2);
+      var scale = 22 / 120;
+
+      glyph.style.transition = 'opacity 0.5s 1s, transform 1.4s cubic-bezier(0.4,0,0.2,1)';
+      glyph.style.transform  = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+      rings.forEach(function(r){ r.style.opacity='0'; r.style.transition='opacity 0.4s'; });
+      sparks.forEach(function(s){ s.style.opacity='0'; s.style.transition='opacity 0.3s'; });
+
+      setTimeout(function(){
+        intro.style.transition = 'opacity 1.6s ease';
+        intro.style.opacity = '0';
+        navWrap.style.opacity = '1';
+        setTimeout(function(){ intro.style.display = 'none'; stopIntroAudio(); }, 1700);
+      }, 800);
+
+    }, 8500);
+  }
+
+
+  // Trigger dissolve when video ends, or after 6s max
+  var dissolved = false;
+  function triggerDissolve(){
+    if(dissolved) return;
+    dissolved = true;
+    startEyePhase();
+  }
+
+  if(video){
+    video.addEventListener('ended', triggerDissolve);
+    setTimeout(triggerDissolve, 6000);
+  } else {
+    eyeLayer.style.opacity = '1';
+    startEyePhase();
+  }
+
+
+  // ── SOUND: play on first click anywhere ───────────────────────────────────
+  var introAudio = document.getElementById('intro-audio');
+  var soundPlayed = false;
+  function playOnClick(){
+    if(soundPlayed || !introAudio) return;
+    soundPlayed = true;
+    document.removeEventListener('click', playOnClick);
+    document.removeEventListener('touchstart', playOnClick);
+    introAudio.volume = 0;
+    introAudio.play().catch(function(){});
+    var vol = 0;
+    var fi = setInterval(function(){
+      vol = Math.min(1, vol + 0.05);
+      introAudio.volume = vol;
+      if(vol >= 1) clearInterval(fi);
+    }, 60);
+  }
+  document.addEventListener('click', playOnClick);
+  document.addEventListener('touchstart', playOnClick);
+
+  // Stop audio when intro ends
+  function stopIntroAudio(){
+    if(!introAudio) return;
+    var fo = setInterval(function(){
+      introAudio.volume = Math.max(0, introAudio.volume - 0.05);
+      if(introAudio.volume <= 0){ clearInterval(fo); introAudio.pause(); }
+    }, 60);
+  }
+
+  // ── NAV: slow persistent sparkle ───────────────────────────────────────────
+  function navPulse(){
+    navRings.forEach(function(r, i){
+      r.style.animation = 'none'; r.offsetHeight;
+      r.style.animation = 'navRingPulse ' + (3.5 + i*0.5) + 's ease-out ' + (i*0.3) + 's forwards';
+    });
+    navSparks.forEach(function(s, i){
+      s.style.animation = 'none'; s.offsetHeight;
+      s.style.animation = 'navSparkle 2.8s ease-out ' + (i*0.22) + 's forwards';
+    });
+  }
+
+  setTimeout(function(){
+    var placeholder = document.getElementById('nav-eye-placeholder');
+    if(placeholder){
+      placeholder.style.cssText = 'position:relative;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;vertical-align:middle;';
+      navWrap.style.position = 'absolute';
+      navWrap.style.inset    = '0';
+      navWrap.style.display  = 'inline-flex';
+      navWrap.style.alignItems = 'center';
+      navWrap.style.justifyContent = 'center';
+      placeholder.appendChild(navWrap);
+    }
+    navWrap.style.opacity = '1';
+    navPulse();
+    setInterval(navPulse, 7000);
+  }, 17000);
+
+})();
+</script>
+
+
+
+
+
+
+<!-- NAV -->
+<nav style="justify-content:space-between;">
+  <div class="nav-logo" style="display:flex;align-items:center;gap:10px;pointer-events:all;">
+    <span id="nav-eye-placeholder" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;"></span>
+    <span style="font-family:'Amiri',serif;font-size:20px;color:var(--gold);letter-spacing:0.06em;">مصر الفرعونية</span>
+  </div>
+  <ul class="nav-links" style="position:absolute;left:50%;transform:translateX(-50%);">
+    <li><a href="javascript:void(0)" data-target="general">معلومات عامة</a></li>
+    <li><a href="javascript:void(0)" data-target="letters">الحروف</a></li>
+    <li><a href="javascript:void(0)" data-target="language">اللغة والخريطة</a></li>
+    <li><a href="javascript:void(0)" data-target="tools">أدوات الكتابة</a></li>
+    <li><a href="javascript:void(0)" data-target="nile">النيل</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="assets/pharaoh-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;pointer-events:none;z-index:0;filter:sepia(0.4) brightness(0.7);">
+  <h1 class="hero-title">حضارة مصر القديمة</h1>
+  <p class="hero-subtitle">ثلاثة آلاف سنة من العطاء والإبداع الإنساني</p>
+  <div class="hero-divider"></div>
+  <div style="display:flex; gap:48px; text-align:center;">
+    <div>
+      <div style="font-family:'Amiri',serif;font-size:32px;color:var(--gold);font-weight:700;">٣٠٠٠</div>
+      <div style="font-size:11px;color:var(--stone);letter-spacing:0.15em;">سنة من التاريخ</div>
+    </div>
+    <div style="width:1px;background:rgba(201,168,76,0.2);"></div>
+    <div>
+      <div style="font-family:'Amiri',serif;font-size:32px;color:var(--gold);font-weight:700;">٧٠٠</div>
+      <div style="font-size:11px;color:var(--stone);letter-spacing:0.15em;">رمز هيروغليفي</div>
+    </div>
+    <div style="width:1px;background:rgba(201,168,76,0.2);"></div>
+    <div>
+      <div style="font-family:'Amiri',serif;font-size:32px;color:var(--gold);font-weight:700;">١١٨</div>
+      <div style="font-size:11px;color:var(--stone);letter-spacing:0.15em;">هرماً مكتشفاً</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>اكتشف</span>
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+      <path d="M8 1v15M2 10l6 8 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hieroglyph Divider -->
+<div style="width:100%;background:#000;position:relative;z-index:2;line-height:0;overflow:hidden;border-top:2px solid #C9A84C;border-bottom:2px solid #C9A84C;box-shadow:0 0 12px rgba(201,168,76,0.4),inset 0 0 12px rgba(201,168,76,0.08);">
+  <img src="assets/hieroglyphs-divider.gif" alt="" style="width:100%;height:70px;display:block;object-fit:cover;object-position:center;"/>
+</div>
+
+<!-- SECTION 1: معلومات عامة -->
+<div class="section-wrap" id="general" style="scroll-margin-top:72px;position:relative;overflow:hidden;">
+  <img src="assets/sarcophagus-general.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.12;pointer-events:none;z-index:0;filter:sepia(0.3) brightness(0.6);">
+  <section>
+    <div class="section-header">
+      <div class="section-number">١</div>
+      <h2 class="section-title">معلومات عامة</h2>
+      <p class="section-lead">نشأت الحضارة المصرية القديمة على ضفاف نهر النيل منذ أكثر من خمسة آلاف عام، وتركت بصمات خالدة في الفن والعمارة والكتابة والعلوم.</p>
+    </div>
+    <div class="ornament">𓏤 𓅱 𓏤</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="info-icon">𓅃</span>
+        <div class="info-label">الحكم</div>
+        <div class="info-value">الفراعنة</div>
+        <div class="info-desc">حكم مصر أكثر من ٣٠٠ فرعون على مدى ثلاثة آلاف عام، من الأسرة الأولى حتى الحكم الروماني.</div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">𓇳</span>
+        <div class="info-label">العمارة</div>
+        <div class="info-value">الأهرامات</div>
+        <div class="info-desc">تُعدّ الأهرامات من أعظم المنجزات المعمارية في التاريخ. هرم خوفو لا يزال يُصنَّف ضمن عجائب الدنيا السبع.</div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">𓂀</span>
+        <div class="info-label">الدين</div>
+        <div class="info-value">التعددية الإلهية</div>
+        <div class="info-desc">آمن المصريون بآلاف الآلهة؛ أبرزهم آمون ورع وأوزيريس وإيزيس وحورس، مع طقوس دينية معقدة ومتطورة.</div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">𓏲</span>
+        <div class="info-label">الزمن</div>
+        <div class="info-value">التقويم المصري</div>
+        <div class="info-desc">ابتكر المصريون تقويماً من ٣٦٥ يوماً موزعة على ١٢ شهراً، مبنياً على دورات فيضان النيل وحركة النجوم.</div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">𓍢</span>
+        <div class="info-label">العلوم</div>
+        <div class="info-value">الطب والرياضيات</div>
+        <div class="info-desc">كان المصريون رواداً في الطب والجراحة والرياضيات والفلك، وخلّفوا بردياتٍ طبية تُبهر العلماء حتى اليوم.</div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">𓆣</span>
+        <div class="info-label">الفن</div>
+        <div class="info-value">الرسم والنحت</div>
+        <div class="info-desc">تميّز الفن المصري بأسلوب هندسي دقيق ولغة بصرية فريدة، موجودة على جدران المعابد والمقابر والبردي.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- Hieroglyph Divider -->
+<div style="width:100%;background:#000;position:relative;z-index:2;line-height:0;overflow:hidden;border-top:2px solid #C9A84C;border-bottom:2px solid #C9A84C;box-shadow:0 0 12px rgba(201,168,76,0.4),inset 0 0 12px rgba(201,168,76,0.08);">
+  <img src="assets/hieroglyphs-divider.gif" alt="" style="width:100%;height:70px;display:block;object-fit:cover;object-position:center;"/>
+</div>
+
+<!-- SECTION 2: الحروف -->
+<div class="section-wrap alt" id="letters" style="scroll-margin-top:72px;position:relative;overflow:hidden;">
+  <img src="assets/ramses-letters.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.13;pointer-events:none;z-index:0;filter:sepia(0.3) brightness(0.6);">
+  <section>
+    <div class="section-header">
+      <div class="section-number">٢</div>
+      <h2 class="section-title">الحروف الهيروغليفية</h2>
+      <p class="section-lead">الهيروغليفية نظام كتابة مقدّس استخدمه المصريون القدماء لأكثر من ثلاثة آلاف سنة. اضغط على أي رمز لتعرف معناه.</p>
+    </div>
+    <div class="letters-grid" id="lettersGrid"></div>
+    <div id="letter-detail">
+      <div class="detail-inner">
+        <div class="detail-glyph" id="detail-glyph"></div>
+        <div class="detail-info">
+          <strong id="detail-name"></strong>
+          <p id="detail-desc"></p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="hieroglyph-legend">
+      <div class="legend-item">
+        <span class="legend-symbol">𓇳</span>
+        <div class="legend-text">
+          <strong>الشمس "رع"</strong>
+          <span>يُمثِّل الإله رع إله الشمس الأعلى، وقرص الشمس رمزٌ مقدّس في المعتقدات المصرية يُعبِّر عن الخلق والحياة والديمومة.</span>
+        </div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-symbol">𓂀</span>
+        <div class="legend-text">
+          <strong>عين حورس</strong>
+          <span>رمز الحماية والملوكية والصحة الجيدة. كان الفراعنة يرسمونها على التمائم والمقابر لحماية الأرواح في العالم الآخر.</span>
+        </div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-symbol">𓋴</span>
+        <div class="legend-text">
+          <strong>حرف "س"</strong>
+          <span>مِن الرموز الأبجدية الأساسية في الهيروغليفية، يُصوِّر قطعة قماش مطوية وهو أحد أكثر الرموز تكراراً في النصوص المصرية.</span>
+        </div>
+      </div>
+      <div class="legend-item">
+        <span class="legend-symbol">𓅱</span>
+        <div class="legend-text">
+          <strong>الفروج "و"</strong>
+          <span>رمز الأبجدية الهيروغليفية المقابل لصوت "و"، يُصوِّر كتكوتاً صغيراً ويمثّل البداية والنشأة في السياق الرمزي المصري.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- Hieroglyph Divider -->
+<div style="width:100%;background:#000;position:relative;z-index:2;line-height:0;overflow:hidden;border-top:2px solid #C9A84C;border-bottom:2px solid #C9A84C;box-shadow:0 0 12px rgba(201,168,76,0.4),inset 0 0 12px rgba(201,168,76,0.08);">
+  <img src="assets/hieroglyphs-divider.gif" alt="" style="width:100%;height:70px;display:block;object-fit:cover;object-position:center;"/>
+</div>
+
+<!-- SECTION 3: اللغة والخريطة -->
+<div class="section-wrap" id="language" style="scroll-margin-top:72px;position:relative;overflow:hidden;">
+  <img src="assets/ramses-head-language.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.13;pointer-events:none;z-index:0;filter:sepia(0.3) brightness(0.6);">
+  <section>
+    <div class="section-header">
+      <div class="section-number">٣</div>
+      <h2 class="section-title">اللغة والخريطة</h2>
+      <p class="section-lead">تطوّرت اللغة المصرية عبر مراحل متعاقبة لأكثر من أربعة آلاف سنة، وكانت مرتبطة ارتباطاً عضوياً بجغرافية وادي النيل.</p>
+    </div>
+    <div class="lang-map-grid">
+      <div>
+        <div class="lang-panel">
+          <h3>مراحل اللغة المصرية</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-era">٣٢٠٠ – ٢٠٠٠ ق.م</div>
+              <div class="timeline-title">المصرية القديمة</div>
+              <div class="timeline-desc">أقدم أشكال اللغة، نُقشت على جدران المعابد والمقابر وبرديات الدولة القديمة، ولغة نصوص الأهرام.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-era">٢٠٠٠ – ١٣٠٠ ق.م</div>
+              <div class="timeline-title">المصرية الوسطى</div>
+              <div class="timeline-desc">تُعدّ النموذج الكلاسيكي للأدب المصري، استُخدمت في الأدب الرفيع والنصوص الدينية والوثائق الرسمية.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-era">١٣٠٠ – ٧٠٠ ق.م</div>
+              <div class="timeline-title">المصرية الحديثة</div>
+              <div class="timeline-desc">اللغة المحكية في عصر الدولة الحديثة، استُخدمت في الرسائل والقصص والأدب الشعبي اليومي.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-era">٧٠٠ ق.م – ٤٠٠ م</div>
+              <div class="timeline-title">الديموطيقية والقبطية</div>
+              <div class="timeline-desc">المراحل الأخيرة من اللغة المصرية، تأثرت بالحضارتين اليونانية والرومانية في فترة الاحتلالين البطلمي والروماني.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <h3>𓇋 خريطة مصر القديمة 𓇋</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Ancient_Egypt_map-en.svg/400px-Ancient_Egypt_map-en.svg.png" alt="خريطة مصر القديمة" style="max-width:100%;width:280px;display:block;border:1px solid rgba(201,168,76,0.2);">
+        
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- Hieroglyph Divider -->
+<div style="width:100%;background:#000;position:relative;z-index:2;line-height:0;overflow:hidden;border-top:2px solid #C9A84C;border-bottom:2px solid #C9A84C;box-shadow:0 0 12px rgba(201,168,76,0.4),inset 0 0 12px rgba(201,168,76,0.08);">
+  <img src="assets/hieroglyphs-divider.gif" alt="" style="width:100%;height:70px;display:block;object-fit:cover;object-position:center;"/>
+</div>
+
+<!-- SECTION 4: أدوات الكتابة -->
+<div class="section-wrap alt" id="tools" style="scroll-margin-top:72px;position:relative;overflow:hidden;">
+  <img src="assets/exhibition-tools.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.13;pointer-events:none;z-index:0;filter:sepia(0.2) brightness(0.6);">
+  <section>
+    <div class="section-header">
+      <div class="section-number">٤</div>
+      <h2 class="section-title">أدوات الكتابة</h2>
+      <p class="section-lead">طوّر المصريون القدماء أدواتٍ للكتابة لا تزال تُبهر العلماء، من ورق البردي إلى الأقلام المصنوعة من القصب.</p>
+    </div>
+    <div class="tools-list">
+      <div class="tool-card">
+        <div class="tool-icon-box">𓇗</div>
+        <div>
+          <div class="tool-name">ورق البردي</div>
+          <div class="tool-desc">صُنع من نبات البردي النيلي، يُقطع إلى شرائح رفيعة تُرصّ عمودياً وأفقياً ثم تُكبس وتُجفَّف، ليُنتج سطحاً ملساً للكتابة.</div>
+        </div>
+        <div class="tool-badge">أهم الأدوات</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon-box">🖊</div>
+        <div>
+          <div class="tool-name">قلم القصب</div>
+          <div class="tool-desc">نُحت من سيقان القصب النيلي، كان الكاتب يمضغ طرفه ليرقق ألياف النبات ثم يغمسه في الحبر ليكتب بدقة متناهية.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon-box">𓍯</div>
+        <div>
+          <div class="tool-name">الحبر والأصباغ</div>
+          <div class="tool-desc">استُخدم الحبر الأسود (فحم خشبي) والأحمر (أكسيد الحديد) والأصفر والأزرق الذي تميّز بصعوبة تحضيره من معدن اللازورد.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon-box">𓏏</div>
+        <div>
+          <div class="tool-name">الحجر والألواح</div>
+          <div class="tool-desc">للنصوص الرسمية والتوثيقات الملكية، استُخدمت ألواح الحجر الجيري والجرانيت والبازلت لضمان الديمومة عبر الأجيال.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon-box">𓈖</div>
+        <div>
+          <div class="tool-name">لوح الكتابة الخشبي</div>
+          <div class="tool-desc">ألواح خشبية مطلية بطبقة من الجص الأبيض كانت تُستخدم في التعليم والتدريب، قابلة للمسح وإعادة الاستخدام مراراً.</div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon-box">𓏞</div>
+        <div>
+          <div class="tool-name">محفظة الكاتب</div>
+          <div class="tool-desc">كان الكاتب يحمل محفظة جلدية تحوي ألواحه وأقلامه وأوانيه الحبرية، وكان محظياً بمكانة اجتماعية رفيعة في المجتمع المصري.</div>
+        </div>
+        <div class="tool-badge" style="color:#C9A84C;border-color:#8B6914;">مهنة نبيلة</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- Hieroglyph Divider -->
+<div style="width:100%;background:#000;position:relative;z-index:2;line-height:0;overflow:hidden;border-top:2px solid #C9A84C;border-bottom:2px solid #C9A84C;box-shadow:0 0 12px rgba(201,168,76,0.4),inset 0 0 12px rgba(201,168,76,0.08);">
+  <img src="assets/hieroglyphs-divider.gif" alt="" style="width:100%;height:70px;display:block;object-fit:cover;object-position:center;"/>
+</div>
+
+<!-- SECTION 5: النيل -->
+<div class="section-wrap" id="nile" style="scroll-margin-top:72px;position:relative;overflow:hidden;">
+  <img src="assets/nile-panorama.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.15;pointer-events:none;z-index:0;filter:sepia(0.2) brightness(0.55);">
+  <section>
+    <div class="section-header">
+      <div class="section-number">٥</div>
+      <h2 class="section-title">نهر النيل</h2>
+      <p class="section-lead">قال هيرودوت "مصر هبة النيل"، وما كان لهذه الحضارة أن تنشأ وتزدهر لولا هذا النهر العظيم الذي أعطى الحياة لأرض الصحراء.</p>
+    </div>
+    <div class="nile-hero">
+      <div class="nile-quote">"إنّ النيل يهبط من عند الآلهة ليُحيي الأرض ويُطعم العباد"</div>
+      <div class="nile-source">— نصّ هيروغليفي من معبد أبيدوس</div>
+    </div>
+    <div class="nile-stats">
+      <div class="nile-stat">
+        <span class="nile-stat-num">٦٦٥٠</span>
+        <div class="nile-stat-label">كيلومتر</div>
+        <div style="font-size:11px;color:#7A6645;margin-top:4px;">أطول أنهار العالم</div>
+      </div>
+      <div class="nile-stat">
+        <span class="nile-stat-num">٣</span>
+        <div class="nile-stat-label">مواسم</div>
+        <div style="font-size:11px;color:#7A6645;margin-top:4px;">الفيضان والزراعة والحصاد</div>
+      </div>
+      <div class="nile-stat">
+        <span class="nile-stat-num">١١</span>
+        <div class="nile-stat-label">دولة تحتضنه</div>
+        <div style="font-size:11px;color:#7A6645;margin-top:4px;">من المنبع حتى المصب</div>
+      </div>
+      <div class="nile-stat">
+        <span class="nile-stat-num">٥٠٠٠</span>
+        <div class="nile-stat-label">سنة من الزراعة</div>
+        <div style="font-size:11px;color:#7A6645;margin-top:4px;">على ضفافه المباركة</div>
+      </div>
+    </div>
+    <div class="nile-aspects">
+      <div class="nile-aspect">
+        <div class="nile-aspect-title">𓇗 الفيضان المقدّس</div>
+        <div class="nile-aspect-text">كان الفيضان السنوي "أخت" حدثاً طبيعياً محورياً، حيث كانت الأمطار الموسمية في المرتفعات الإثيوبية تُغذّي النيل الأزرق بمياه غنية بالرواسب. كان المصريون يعتقدون أن دموع الإلهة إيزيس حزناً على أوزيريس هي ما يُسبّب الفيضان. خلّف الفيضان طبقة "كيميت" — الأرض السوداء الخصبة — التي جعلت الزراعة المكثفة ممكنة دون تسميد.</div>
+      </div>
+      <div class="nile-aspect">
+        <div class="nile-aspect-title">𓈖 شريان الحضارة والتجارة</div>
+        <div class="nile-aspect-text">كان النيل شبكة النقل الرئيسية للمملكة، تتدفق عليه البضائع من الجرانيت من أسوان شمالاً إلى منف، والذهب النوبي وأرز لبنان وبخور بونت على طول مجراه. وحّد النيل مصر العليا والسفلى في حضارة متماسكة يربطها شريان مائي مشترك.</div>
+      </div>
+      <div class="nile-aspect">
+        <div class="nile-aspect-title">𓅱 الإله حاب والروحانية</div>
+        <div class="nile-aspect-text">جسّد الإله "حاب" قوة الفيضان، وكان يُصوَّر بدين مزدوج الجنس مطلياً باللون الأزرق أو الأخضر ومزيناً بنباتات البردي واللوتس. كانت المهرجانات تُقام عند وصول الفيضان وعند الحصاد، تجمع المزارعين والكهنة والنبلاء على ضفاف النيل ذاتها.</div>
+      </div>
+      <div class="nile-aspect">
+        <div class="nile-aspect-title">𓍢 هندسة المياه والزراعة</div>
+        <div class="nile-aspect-text">طوّر المصريون شبكة واسعة من القنوات والأحواض لتخزين مياه الفيضان وتوزيعها. اخترعوا الشادوف — رافعة توازنية لرفع المياه — مما وسّع رقعة الأراضي الزراعية. قسّموا العام لثلاثة فصول: أخيت (فيضان)، وبريت (زراعة)، وشمو (حصاد).</div>
+      </div>
+      <div class="nile-aspect">
+        <div class="nile-aspect-title">𓂀 النيل والحياة الأبدية</div>
+        <div class="nile-aspect-text">امتد تأثير النيل إلى ما بعد الحياة الدنيا؛ تصف نصوص كتاب الموتى رحلات بالقوارب عبر نهر النيل السماوي للوصول إلى حقول أوزيريس. كانت الحياة الآخرة ذاتها تُتصوَّر على هيئة "حقل القصب" — جنة خضراء مائية تمتد على طولها قنوات لا نهاية لها.</div>
+      </div>
+      <div class="nile-aspect">
+        <div class="nile-aspect-title">𓇳 الإرث الخالد</div>
+        <div class="nile-aspect-text">لا يزال النيل اليوم شريان الحياة النابض للمنطقة؛ تسعون في المئة من سكان مصر يقطنون على بُعد أميال قليلة منه. السد العالي في أسوان حوّل الفيضان السنوي إلى طاقة كهرومائية وري دائم. كما قال هيرودوت بإيجاز بليغ: "مصر هبة النيل".</div>
+      </div>
+    </div>
+
+    <!-- Book Preview & Download -->
+    <div style="margin-top:56px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
+        <div style="height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(46,139,132,0.4));"></div>
+        <h3 style="font-family:'Amiri',serif;font-size:24px;color:var(--teal-light);white-space:nowrap;">𓇗 كتاب: النيل — شريان الحياة في مصر القديمة</h3>
+        <div style="height:1px;flex:1;background:linear-gradient(90deg,rgba(46,139,132,0.4),transparent);"></div>
+      </div>
+      <p style="font-size:13px;color:#7ABFBA;text-align:center;margin-bottom:24px;line-height:1.8;">بقلم: محمد جعفر كمال — يستعرض الكتاب خمسة فصول تُغطّي الزراعة، وهندسة المياه، والروحانية، والتجارة، وإرث النيل الدائم.</p>
+
+      <!-- Chapter tabs -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;" id="chapterTabs">
+        <button class="ch-tab active-tab" data-ch="0" onclick="showChapter(0)">الفهرس</button>
+        <button class="ch-tab" data-ch="1" onclick="showChapter(1)">الفصل الأول — الزراعة</button>
+        <button class="ch-tab" data-ch="2" onclick="showChapter(2)">الفصل الثاني — هندسة المياه</button>
+        <button class="ch-tab" data-ch="3" onclick="showChapter(3)">الفصل الثالث — الروحانية</button>
+        <button class="ch-tab" data-ch="4" onclick="showChapter(4)">الفصل الرابع — التجارة</button>
+        <button class="ch-tab" data-ch="5" onclick="showChapter(5)">الفصل الخامس — الإرث</button>
+      </div>
+
+      <!-- Chapter content display -->
+      <div id="chapterBox" style="background:#071918;border:2px solid rgba(46,139,132,0.4);border-top:3px solid rgba(46,139,132,0.7);padding:32px;min-height:220px;font-family:'Amiri',serif;font-size:16px;color:#9FD5D0;line-height:2;direction:rtl;"></div>
+
+      <!-- Download button -->
+      <div style="text-align:center;margin-top:24px;">
+        <a id="pdfDownload" href="assets/النيل-شريان-الحياة.pdf" download="النيل — شريان الحياة في مصر القديمة.pdf"
+           style="display:inline-block;font-family:'Noto Naskh Arabic',serif;font-size:14px;font-weight:600;color:#C9A84C;border:2px solid #C9A84C;padding:12px 36px;letter-spacing:0.15em;text-decoration:none;transition:all 0.3s;background:rgba(201,168,76,0.05);"
+           onmouseover="this.style.background='rgba(201,168,76,0.15)'"
+           onmouseout="this.style.background='rgba(201,168,76,0.05)'">
+          ⬇ تحميل الكتاب كاملاً — PDF
+        </a>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-text">𓂀 حضارة خالدة على ضفاف النيل 𓂀</div>
+  <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent);margin:16px auto;max-width:300px;"></div>
+  <div class="footer-sub">استكشاف الحضارة المصرية القديمة · جميع الحقوق محفوظة</div>
+</footer>
+
+<script>
+const letters = [
+  { g:'𓄿', ar:'أ', lat:'A', name:'النسر', desc:'يُمثِّل صوت "أ" المصري القديم. رمز الإله "نخبت" حارسة مصر العليا، يُصوِّر نسراً ملكياً منتشر الجناحين يوحي بالقوة والسيادة.' },
+  { g:'𓇋', ar:'إ', lat:'I', name:'القصب', desc:'يمثّل صوت "إ" في اللغة المصرية القديمة. يُصوِّر سيقان البردي المتكررة الذي كان يُستخدم لصنع الورق والقوارب والحصائر.' },
+  { g:'𓂝', ar:'ع', lat:'ʕ', name:'الذراع', desc:'يُمثِّل حرف "ع" في الهيروغليفية. يُصوِّر ذراعاً بشرية ممدودة، وهو من الرموز الجسدية الشائعة في الأبجدية المصرية القديمة.' },
+  { g:'𓃀', ar:'ب', lat:'B', name:'القدم', desc:'يُمثِّل صوت "ب" في اللغة المصرية. يُصوِّر قدماً بشرية من الجانب، وهو من أقدم الرموز الأبجدية في الكتابة الهيروغليفية.' },
+  { g:'𓊪', ar:'پ', lat:'P', name:'الحصير', desc:'يُمثِّل صوت "پ" في الهيروغليفية. يُصوِّر حصيرة مطوية تُستخدم في الجلوس والنوم، وهو رمز من الحياة اليومية المصرية.' },
+  { g:'𓆑', ar:'ف', lat:'F', name:'الأفعى', desc:'يُمثِّل صوت "ف"، ويُصوِّر أفعى الكوبرا الملتفة. كان للأفعى مكانة دينية رفيعة في مصر القديمة كرمز للحكمة والحماية الملكية.' },
+  { g:'𓅓', ar:'م', lat:'M', name:'البومة', desc:'يُمثِّل حرف "م" في الأبجدية المصرية. يُصوِّر بومة تنظر للأمام وهو من الرموز المميزة التي تظهر كثيراً في النصوص الهيروغليفية.' },
+  { g:'𓈖', ar:'ن', lat:'N', name:'الماء', desc:'يُمثِّل صوت "ن"، ويُصوِّر موجات الماء المتموّجة. يرتبط بالنيل والإله "نون" الذي يُجسِّد المياه البدائية في الأساطير المصرية.' },
+  { g:'𓂋', ar:'ر', lat:'R', name:'الفم', desc:'يُمثِّل حرف "ر" في الهيروغليفية. يُصوِّر فماً بشرياً من الجانب، وهو من الرموز الجسدية الأساسية في الكتابة المصرية القديمة.' },
+  { g:'𓉔', ar:'ه', lat:'H', name:'المخطط', desc:'يُمثِّل صوت "ه" في المصرية. يُصوِّر مخطط حصيرة أو قصبة، رمز مرتبط بالأبنية التقليدية والحياة الريفية في وادي النيل.' },
+  { g:'𓐍', ar:'خ', lat:'Ḫ', name:'الغربال', desc:'يُمثِّل صوت "خ" في الهيروغليفية. يُصوِّر غربالاً مُنتخَلاً يُستخدم لفرز الحبوب، رمز من أدوات الحياة اليومية المصرية.' },
+  { g:'𓄡', ar:'ز', lat:'Z', name:'قفل الباب', desc:'يُمثِّل صوت "ز" في المصرية القديمة. يُصوِّر قفلاً أو مزلاجاً لإغلاق الأبواب، رمز من رموز الحماية والحراسة المصرية.' },
+  { g:'𓇌', ar:'ي', lat:'Y', name:'الريشتان', desc:'يُمثِّل صوت "ي" في الهيروغليفية. يُصوِّر ريشتين مزدوجتين، وهو رمز يرتبط بعدة آلهة أبرزهم الإله "آمون" إله الخلق.' },
+  { g:'𓎡', ar:'ك', lat:'K', name:'السلة', desc:'يُمثِّل حرف "ك" في المصرية. يُصوِّر سلة بمقبض دائري تُستخدم في حمل البضائع، ورمز الإله "إنبو" (أنوبيس) في بعض السياقات.' },
+  { g:'𓄤', ar:'ق', lat:'Q', name:'التلة', desc:'يُمثِّل صوت "ق" في الهيروغليفية. يُصوِّر تلة أو منحدراً في الصحراء، ويرتبط بمفهوم الأرض البدائية التي نبتت منها الحياة.' },
+  { g:'𓎛', ar:'غ', lat:'G', name:'الجرة', desc:'يُمثِّل صوت "غ" في المصرية. يُصوِّر جرة فخارية كانت تُستخدم لحفظ الماء والزيت والطعام، من أكثر الأدوات شيوعاً في مصر القديمة.' },
+];
+
+const grid = document.getElementById('lettersGrid');
+const detail = document.getElementById('letter-detail');
+
+letters.forEach((l) => {
+  const tile = document.createElement('div');
+  tile.className = 'letter-tile';
+  tile.innerHTML = `<div class="letter-hiero">${l.g}</div><div class="letter-arabic">${l.ar}</div><div class="letter-latin">${l.lat}</div>`;
+  tile.onclick = () => {
+    document.querySelectorAll('.letter-tile').forEach(t => t.classList.remove('active'));
+    tile.classList.add('active');
+    document.getElementById('detail-glyph').textContent = l.g;
+    document.getElementById('detail-name').textContent = l.name + ' — ' + l.ar + ' /' + l.lat + '/';
+    document.getElementById('detail-desc').textContent = l.desc;
+    detail.classList.add('visible');
+  };
+  grid.appendChild(tile);
+});
+</script>
+
+
+
+
+
+<script>
+(function() {
+  var navH = document.querySelector('nav').offsetHeight;
+  document.querySelectorAll('[data-target]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      var el = document.getElementById(this.getAttribute('data-target'));
+      if (!el) return;
+      var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 8;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+<canvas id="dust" style="position:fixed;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;"></canvas>
+<script>
+(function(){
+  var cv = document.getElementById('dust');
+  var cx = cv.getContext('2d');
+  function resize(){ cv.width=innerWidth; cv.height=innerHeight; }
+  resize();
+  addEventListener('resize', resize);
+
+  function rnd(a,b){ return Math.random()*(b-a)+a; }
+
+  /* ---- PARTICLES ---- */
+  var pts = [];
+  for(var i=0;i<400;i++){
+    pts.push({
+      x: rnd(0,1), y: rnd(0,1),
+      r: rnd(1,4),
+      a: rnd(0.06,0.16),
+      h: rnd(25,48),
+      s: rnd(50,80),
+      l: rnd(60,85),
+      vx: rnd(-0.0003,0.0003),
+      vy: rnd(0.00005,0.0003),
+      ph: rnd(0,6.28),
+      spd: rnd(0.008,0.025)
+    });
+  }
+
+  /* ---- CLUMPS ---- */
+  var clumps = [];
+  for(var i=0;i<12;i++){
+    clumps.push({
+      x: rnd(0,1), y: rnd(0,1),
+      rx: rnd(80,260), ry: rnd(40,130),
+      a: rnd(0.03,0.07),
+      h: rnd(28,44),
+      vx: rnd(-0.0001,0.0001),
+      vy: rnd(-0.00005,0.00005),
+      ph: rnd(0,6.28),
+      spd: rnd(0.004,0.012)
+    });
+  }
+
+  function loop(){
+    var W=cv.width, H=cv.height;
+    cx.clearRect(0,0,W,H);
+
+    /* clumps */
+    clumps.forEach(function(p){
+      p.ph+=p.spd; p.x+=p.vx; p.y+=p.vy;
+      if(p.x<-0.4)p.x=1.4; if(p.x>1.4)p.x=-0.4;
+      if(p.y<-0.4)p.y=1.4; if(p.y>1.4)p.y=-0.4;
+      var pulse=0.7+0.3*Math.sin(p.ph);
+      var gx=p.x*W, gy=p.y*H;
+      var g=cx.createRadialGradient(gx,gy,0,gx,gy,p.rx);
+      g.addColorStop(0,'hsla('+p.h+',65%,70%,'+(p.a*pulse*0.9)+')');
+      g.addColorStop(0.5,'hsla('+p.h+',55%,60%,'+(p.a*pulse*0.7)+')');
+      g.addColorStop(1,'hsla('+p.h+',45%,50%,0)');
+      cx.save();
+      cx.scale(1,p.ry/p.rx);
+      cx.beginPath();
+      cx.arc(gx,gy*(p.rx/p.ry),p.rx,0,Math.PI*2);
+      cx.fillStyle=g; cx.fill();
+      cx.restore();
+    });
+
+    /* particles */
+    pts.forEach(function(p){
+      p.ph+=p.spd; p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0)p.x=1; if(p.x>1)p.x=0;
+      if(p.y>1)p.y=0;
+      var pulse=0.5+0.5*Math.sin(p.ph);
+      cx.beginPath();
+      cx.arc(p.x*W,p.y*H,p.r,0,Math.PI*2);
+      cx.fillStyle='hsla('+p.h+','+p.s+'%,'+p.l+'%,'+(p.a*pulse)+')';
+      cx.fill();
+    });
+requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
+
+
+<style>
+.ch-tab {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #7ABFBA;
+  background: #071918;
+  border: 1.5px solid rgba(46,139,132,0.3);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.25s;
+  border-radius: 2px;
+}
+.ch-tab:hover { background: rgba(46,139,132,0.15); color: #2E8B84; border-color: rgba(46,139,132,0.6); }
+.active-tab { background: rgba(46,139,132,0.2) !important; color: #2E8B84 !important; border-color: rgba(46,139,132,0.8) !important; }
+</style>
+<script>
+var chapters = [
+  "<strong>الفهرس</strong><br><br>الفصل الأول: هبة النهر — الزراعة والهلال الخصيب (ص ١–١٤)<br>الفصل الثاني: هندسة التدفق — إدارة المياه والبناء (ص ١٥–١٨)<br>الفصل الثالث: النهر المقدس — الروحانية والارتباط الإلهي (ص ١٩–٢٢)<br>الفصل الرابع: شرايين التجارة — التجارة والسفر والاتصال (ص ٢٣–٢٧)<br>الفصل الخامس: إرث النيل — العلم والفن والتأثير الدائم (ص ٢٨–٣٥)",
+  "لم يكن النيل مجرد نهر؛ بل كان معجزة متكررة. كان الفيضان السنوي «الأخت» مواسمَ من الدراما الطبيعية المكثفة التي حددت إيقاع الحياة على طوله لآلاف السنين.<br><br>كانت أصول هذا الطوفان في المرتفعات الإثيوبية؛ حيث تطلق الأمطار الموسمية غضبها على الأرض، فتغمر روافد النيل الأبيض والأزرق. كان النيل الأزرق يحمل كميات هائلة من الرواسب، مما يجعل مياهه سائلاً سميكاً موحلاً مغذياً للحياة.<br><br>خلّف الفيضان «كيميت» — الأرض السوداء الخصبة — التي أعطت مصر اسمها وخصوبتها التي لا مثيل لها. كان هذا الترسب الذي يتجدد سنوياً العامل الرئيس الذي جعل الزراعة المكثفة ممكنة دون حاجة إلى إراحة التربة أو التسميد الصناعي.",
+  "لم تكن حكمة الفراعنة تكمن فقط في مقابرهم الضخمة، بل في شبكة معقدة من القنوات والسدود التي بثّت الحياة في الصحراء.<br><br>ظهر الشادوف — رافعة توازنية بسيطة التصميم ولكنها عبقرية — ليرفع المياه إلى أراضٍ أعلى، فوسّع رقعة الأراضي الزراعية بعيداً عن السهول الفيضية المباشرة. كان بناء هذه المنظومة يتطلب جهداً مجتمعياً منسقاً؛ فنجاح مزرعة كان مرتبطاً بجهاد مزرعة أخرى.<br><br>كان مقياس النيل — النيلومتر — أداةً لا غنى عنها؛ فمن قراءاته كان للفرعون تقدير غلة العام القادم، وللكتبة تعديل ضرائب الحبوب، وللمزارعين الحكم بحقولهم الخصبة.",
+  "في قلب تقديس المصريين للنيل يقف حاب، التجسيد الإلهي للفيضان. على عكس الآلهة المحاربة أو الانتقامية، كان حاب يُصوَّر بشخصية بدينة مزدوجة الجنس، يرمز إلى الخصوبة والتغذية دون تمييز.<br><br>«ليلة الدمعة» كانت أكثر الأحداث انتظاراً، حيث يجتمع الكهنة والجمهور على ضفاف النيل ليشهدوا أول علامات وصول الفيضان، معتقدين أن ارتفاع المياه نابع من دموع إيزيس حزناً على أوزيريس.<br><br>تصف نصوص كتاب الموتى رحلات بالقوارب عبر «نهر النيل السماوي» للوصول إلى حقول أوزيريس. كانت الحياة الآخرة تُتصوَّر على هيئة «حقل القصب» — جنة خضراء مائية.",
+  "كان النيل بمثابة شريان الحياة لمصر القديمة بالمعنى الحرفي؛ فقد عمل كشبكة النقل الرئيسية قبل وقت طويل من ظهور الطرق أو المركبات.<br><br>تدفقت البضائع على طوله: الجرانيت من أسوان شمالاً إلى منف، والذهب النوبي وأرز لبنان والبخور من بونت يقطعون مسافات شاسعة. وظهرت مدن وموانئ سوقية مزدحمة في نقاط استراتيجية كممفيس وطيبة واليفانتين، حيث يجتمع التجار من مصر والنوبة لتبادل البضائع.<br><br>وحّد النيل مصر العليا والسفلى في حضارة واحدة؛ فقد أدرك جميع المصريين أن ازدهارهم يعتمد على نفس الهر، ونفس حاب، ونفس النعمة الدورية.",
+  "أدى اعتماد المصريين الشديد على إيقاعات النيل إلى فهم متطور لعلم الفلك؛ فكان الحدث السماوي الأهم هو شروق النجم سيريوس قبل الفجر بالتزامن الدقيق مع بداية الفيضان السنوي، مما أسّس لأول تقويم شمسي في التاريخ من ٣٦٥ يوماً.<br><br>تركت الحضارة التي نشأت على ضفاف النيل بصمة لا تُمحى في تاريخ البشرية: أنظمة الكتابة الهيروغليفية، والهندسة المعمارية الضخمة، والطب العشبي المتطور، والحكم المركزي. المصريون المعاصرون — ٩٠٪ منهم يقطنون قرب النيل — لا يزالون يرثون هذه العلاقة العميقة مع الهر.<br><br>كما قال هيرودوت: «مصر هبة النيل»."
+];
+
+function showChapter(idx) {
+  document.getElementById('chapterBox').innerHTML = chapters[idx];
+  document.querySelectorAll('.ch-tab').forEach(function(t) { t.classList.remove('active-tab'); });
+  document.querySelectorAll('.ch-tab')[idx].classList.add('active-tab');
+}
+
+document.addEventListener('DOMContentLoaded', function() { showChapter(0); });
+</script>
+
+
+<script>
+// Highlight active nav link on scroll
+(function(){
+  var sections = ['general','letters','language','tools','nile'];
+  var links = {};
+  sections.forEach(function(id){
+    var el = document.querySelector('[data-target="'+id+'"]');
+    if(el) links[id] = el;
+  });
+  window.addEventListener('scroll', function(){
+    var scrollY = window.pageYOffset + 80;
+    var heroH = document.querySelector('.hero') ? document.querySelector('.hero').offsetHeight : window.innerHeight;
+    // Only highlight if scrolled past hero
+    if(window.pageYOffset < heroH * 0.85){
+      sections.forEach(function(id){ if(links[id]) links[id].classList.remove('nav-active'); });
+      return;
+    }
+    var current = null;
+    sections.forEach(function(id){
+      var sec = document.getElementById(id);
+      if(sec && sec.getBoundingClientRect().top + window.pageYOffset <= scrollY) current = id;
+    });
+    sections.forEach(function(id){
+      if(links[id]) links[id].classList.toggle('nav-active', id === current);
+    });
+  });
+  // Fire once on load to clear active state on hero
+  window.dispatchEvent(new Event('scroll'));
+})();
+</script>
+
+
+
+
+</body>
+</html>
